@@ -49,18 +49,18 @@ public class Datos {
     public void depositoDinero(double cantidad) {
         if (cantidad > 0) {
             Saldo += cantidad;
-            System.out.println("Depósito exitoso. Nuevo saldo: $" + Saldo);
+            System.out.println("El deposito se realizo correctamente, su saldo es: $" + Saldo);
         } else {
-            System.out.println("La cantidad ingresada no es válida.");
+            System.out.println("Cantidad invalidad por favor vuelva a intentarlo.");
         }
     }
 
     public void retirarDinero(double cantidad) {
         if (cantidad > 0 && cantidad <= Saldo) {
             Saldo -= cantidad;
-            System.out.println("Retiro exitoso. Nuevo saldo: $" + Saldo);
+            System.out.println("Su retiro a sido exitoso, Su saldo es: $" + Saldo);
         } else {
-            System.out.println("Fondos insuficientes o cantidad no válida.");
+            System.out.println("Fondos insuficientes, vuelva intentarlo otra vez.");
         }
     }
 }

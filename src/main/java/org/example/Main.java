@@ -14,16 +14,16 @@ public class Main {
 
         while (continuar) {
             System.out.println("\n--- Menú de Cuenta Bancaria ---");
-            System.out.println("1. Consultar información de una cuenta");
-            System.out.println("2. Depositar dinero");
-            System.out.println("3. Retirar dinero");
-            System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("1). Consultar información de una cuenta");
+            System.out.println("2). Depositar dinero");
+            System.out.println("3). Retirar dinero");
+            System.out.println("4). Salir");
+            System.out.print("Por favor, seleccione una opción: ");
 
             int opcion = teclado.nextInt();
             teclado.nextLine();
 
-            Datos cuentaSeleccionada = null;
+            Datos NumeroCuentas = null;
 
             if (opcion >= 1 && opcion <= 3) {
                 System.out.print("Ingrese el número de cuenta: ");
@@ -31,11 +31,11 @@ public class Main {
                 teclado.nextLine();
 
                 if (numeroCuentaIngresado == Titular1.getNumeroCuenta()) {
-                    cuentaSeleccionada = Titular1;
+                    NumeroCuentas = Titular1;
                 } else if (numeroCuentaIngresado == Titular2.getNumeroCuenta()) {
-                    cuentaSeleccionada = Titular2;
+                    NumeroCuentas = Titular2;
                 } else if (numeroCuentaIngresado == Titular3.getNumeroCuenta()) {
-                    cuentaSeleccionada = Titular3;
+                    NumeroCuentas = Titular3;
                 } else {
                     System.out.println("Número de cuenta no encontrado.");
                     continue;
@@ -43,15 +43,15 @@ public class Main {
             }
 
             if (opcion == 1) {
-                System.out.println("\nInformación de la cuenta:\n" + cuentaSeleccionada);
+                System.out.println("\nInformación de la cuenta:\n" + NumeroCuentas);
             } else if (opcion == 2) {
                 System.out.print("Ingrese la cantidad a depositar: ");
                 int deposito = teclado.nextInt();
-                cuentaSeleccionada.depositoDinero(deposito);
+                NumeroCuentas.depositoDinero(deposito);
             } else if (opcion == 3) {
                 System.out.print("Ingrese la cantidad a retirar: ");
                 int retiro = teclado.nextInt();
-                cuentaSeleccionada.retirarDinero(retiro);
+                NumeroCuentas.retirarDinero(retiro);
             } else if (opcion == 4) {
                 System.out.println("Saliendo del programa...");
                 continuar = false;
